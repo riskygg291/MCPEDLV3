@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCPEDLV2 - Ultimate Addon Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-content">
+            <h1 class="glow-text">MCPEDL<span>V2</span></h1>
+            <div class="loading-bar"><div class="progress"></div></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-logo">MCPEDL<span>V2</span></div>
+        <div class="nav-auth">
+            <button id="login-btn" class="btn btn-primary"><i class="fab fa-google"></i> Login with Google</button>
+            <div id="user-profile" class="hidden">
+                <img id="user-avatar" src="" alt="Profile" onclick="toggleProfileModal()">
+                <button id="logout-btn" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="upload-section" class="card hidden">
+            <h2><i class="fas fa-cloud-upload-alt"></i> Share Your Addon</h2>
+            <form id="addon-form">
+                <div class="input-group">
+                    <label>Addon Name</label>
+                    <input type="text" id="addon-name" required placeholder="e.g., Ultra Shader V2">
+                </div>
+                <div class="input-group">
+                    <label>Download Link</label>
+                    <input type="url" id="addon-link" required placeholder="https://mediafire.com/...">
+                </div>
+                <button type="submit" class="btn btn-success">Publish Addon</button>
+            </form>
+        </section>
+
+        <section id="feed-section">
+            <h2><i class="fas fa-compass"></i> Community Addons</h2>
+            <div id="addons-grid" class="addons-grid">
+                </div>
+        </section>
+    </main>
+
+    <div id="profile-modal" class="modal hidden">
+        <div class="modal-content card">
+            <span class="close-btn" onclick="toggleProfileModal()">&times;</span>
+            <h3>Edit Profile Picture</h3>
+            <div class="input-group">
+                <label>Paste Image URL</label>
+                <input type="url" id="custom-avatar-url" placeholder="https://images.com/my-pic.jpg">
+            </div>
+            <button onclick="updateProfilePicture()" class="btn btn-primary">Save Changes</button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
